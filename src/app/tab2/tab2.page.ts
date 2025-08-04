@@ -20,15 +20,30 @@ import {
 } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import {RouterLink} from "@angular/router";
-import { OverlayEventDetail } from '@ionic/core/components';
 import {bulbOutline, hourglassOutline, barbellOutline} from "ionicons/icons";
 import {addIcons} from "ionicons";
+import {
+  ApexNonAxisChartSeries,
+  ApexPlotOptions,
+  ApexChart, ChartComponent
+} from "ng-apexcharts";
+
+import { NgApexchartsModule } from "ng-apexcharts";
+import {NgIf} from "@angular/common";
+
+export type ChartOptions = {
+  series: ApexNonAxisChartSeries;
+  chart: ApexChart;
+  labels: string[];
+  plotOptions: ApexPlotOptions;
+  colors: string[];
+};
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonIcon, RouterLink, IonGrid, IonRow, IonCol, IonSelect, IonSelectOption, IonText, IonTextarea, IonButton, IonModal, IonButtons, IonList, IonItem, IonLabel]
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, NgApexchartsModule, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonIcon, RouterLink, IonGrid, IonRow, IonCol, IonSelect, IonSelectOption, IonText, IonTextarea, IonButton, IonModal, IonButtons, IonList, IonItem, IonLabel, ChartComponent, NgIf]
 })
 export class Tab2Page {
 
@@ -36,6 +51,42 @@ export class Tab2Page {
 
   isRevisionModalOpen = false;
   isSubmitModalOpen = false;
+
+  @ViewChild("scoreChart") chart!: ChartComponent;
+  public chartOptions: Partial<ChartOptions> = {
+    series: [44, 55, 67, 83],
+    chart: {
+      height: 350,
+      type: "radialBar"
+    } as ApexChart,
+    plotOptions: {
+      radialBar: {
+        hollow: {
+          size: "30%" // Smaller = thicker bar, Larger = thinner bar
+        },
+        track: {
+          strokeWidth: "100%" // Controls track width relative to bar
+        },
+        dataLabels: {
+          name: {
+            fontSize: "22px"
+          },
+          value: {
+            fontSize: "16px"
+          },
+          total: {
+            show: true,
+            label: "Total",
+            formatter: function(w) {
+              return "249";
+            }
+          }
+        }
+      }
+    } as ApexPlotOptions,
+    colors: ["#1ab7ea", "#0084ff", "#39539E", "#0077B5"],
+    labels: ["Apples", "Oranges", "Bananas", "Berries"]
+  };
 
   constructor() {
     addIcons({bulbOutline, hourglassOutline, barbellOutline});
@@ -46,7 +97,15 @@ export class Tab2Page {
   }
 
   showSubmitModal(show: boolean) {
-    this.isSubmitModalOpen = show;
+      this.isSubmitModalOpen = show;
+
+      if (show) {
+        this.chartOptions.series = [0, 0, 0, 0];
+        // Wait for modal to render DOM, then update chart
+        setTimeout(() => {
+          this.chartOptions.series = [40, 60, 78, 90];
+        }, 2000); // adjust delay if needed
+      }
   }
 
   rewrite() {
@@ -72,5 +131,9 @@ export class Tab2Page {
 
   closeSubmitModal() {
     this.showSubmitModal(false);
+  }
+
+  randomSeries() {
+    this.chartOptions.series = Array.from({ length: 4 }, () => Math.floor(Math.random() * 101));
   }
 }
