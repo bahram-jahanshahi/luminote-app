@@ -1,17 +1,41 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      League
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Current League Card -->
+  <ion-card class="glass-card league-card">
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <ion-card-content>
+      <div style="display:flex;justify-content:center;align-items:center;">
+        <ion-img src="/assets/images/gold_one_league.png" style="width:40%; height:auto;"></ion-img>
+      </div>
+      <ion-progress-bar value="0.72" color="warning"></ion-progress-bar>
+      <p class="progress-text">Progress to Gold II: 72%</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Leaderboard Card -->
+  <ion-card class="glass-card">
+    <ion-card-content>
+      <ion-list>
+        @for (user of leaderboard; track user) {
+        <ion-item [class.you]="user.isYou">
+          <ion-avatar slot="start">
+            <img [src]="user.avatar" />
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ user.name }}</h2>
+            <p>{{ user.points }} pts</p>
+          </ion-label>
+          <ion-badge color="primary" slot="end">#{{ user.rank }}</ion-badge>
+        </ion-item>
+        }
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

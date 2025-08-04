@@ -117,7 +117,7 @@
       </ion-modal>
       <!-- End of Revision Modal -->
       <!-- Submit Modal -->
-      <ion-modal [isOpen]="isSubmitModalOpen" >
+      <ion-modal #submitModal [isOpen]="isSubmitModalOpen" >
         <ng-template>
           <ion-header>
             <ion-toolbar>
@@ -133,7 +133,7 @@
                 <ion-button (click)="randomSeries()">Random Score</ion-button>
                 <!--The content below is only a placeholder and can be replaced.-->
                 @if (isSubmitModalOpen) {
-                  <apx-chart id="scoreChart"
+                  <apx-chart #scoreChart
                     [series]="chartOptions.series!"
                     [chart]="chartOptions.chart!"
                     [plotOptions]="chartOptions.plotOptions!"

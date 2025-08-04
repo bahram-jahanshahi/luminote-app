@@ -1,0 +1,36 @@
+.league-bg {
+  --background: linear-gradient(135deg, #1c1d3a, #3e3e72);
+  padding: 16px;
+}
+
+.glass-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.league-card ion-progress-bar {
+  margin-top: 12px;
+}
+
+.progress-text {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #f5d67b;
+}
+
+ion-item.you {
+  border-left: 4px solid #ffd86e;
+  border-right: 4px solid #ffd86e;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+}

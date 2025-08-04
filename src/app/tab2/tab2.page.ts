@@ -19,7 +19,7 @@ import {
   IonButton, IonModal, IonButtons, IonList, IonItem, IonLabel
 } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {bulbOutline, hourglassOutline, barbellOutline} from "ionicons/icons";
 import {addIcons} from "ionicons";
 import {
@@ -51,6 +51,9 @@ export class Tab2Page {
 
   isRevisionModalOpen = false;
   isSubmitModalOpen = false;
+
+  @ViewChild('submitModal', { static: false }) submitModalRef!: IonModal;
+
 
   @ViewChild("scoreChart") chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions> = {
@@ -88,7 +91,7 @@ export class Tab2Page {
     labels: ["Apples", "Oranges", "Bananas", "Berries"]
   };
 
-  constructor() {
+  constructor(private router: Router) {
     addIcons({bulbOutline, hourglassOutline, barbellOutline});
   }
 
@@ -104,7 +107,17 @@ export class Tab2Page {
         // Wait for modal to render DOM, then update chart
         setTimeout(() => {
           this.chartOptions.series = [40, 60, 78, 90];
-        }, 2000); // adjust delay if needed
+        }, 100); // adjust delay if needed
+      } else {
+        // First dismiss the modal
+        if (this.submitModalRef) {
+          this.submitModalRef.dismiss().then(() => {
+            // Then navigate
+            this.router.navigate(['/tabs/tab3']);
+          });
+        } else {
+          this.router.navigate(['/tabs/tab3']);
+        }
       }
   }
 
