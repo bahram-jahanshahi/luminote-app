@@ -1,17 +1,58 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Voice of the Image
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!--<ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Voice of the Image</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header>-->
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-card >
+    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <!--<ion-card-header>
+      <ion-card-title>
+        What is the voice of the image?
+      </ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>-->
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-text>
+              <h1>The heart of the voice</h1>
+            </ion-text>
+            <ion-select aria-label="Select the voice" interface="action-sheet" placeholder="Select the voice">
+              <ion-select-option value="Poetic">Poetic</ion-select-option>
+              <ion-select-option value="Descriptive">Descriptive</ion-select-option>
+              <ion-select-option value="Narrative">Narrative</ion-select-option>
+              <ion-select-option value="Reflective">Reflective</ion-select-option>
+              <ion-select-option value="Minimalist">Minimalist</ion-select-option>
+              <ion-select-option value="Philosophical">Philosophical</ion-select-option>
+              <ion-select-option value="Romantic">Romantic</ion-select-option>
+              <ion-select-option value="Surreal">Surreal</ion-select-option>
+              <ion-select-option value="Symbolic">Symbolic</ion-select-option>
+            </ion-select>
+
+          </ion-col>
+          <ion-col size="12">
+            <ion-text>
+              <h1>The voice</h1>
+            </ion-text>
+            <ion-textarea placeholder="Write your description here..." rows="5"></ion-textarea>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-button expand="block">Make the voice heard</ion-button>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>
