@@ -2,6 +2,12 @@
 
 ## How to run on iOS by XCode
 
+Prerequisites:
+```bash
+brew install cocoapods
+npm install @capacitor/ios
+```
+
 Add ios platform to your Ionic project (if not already added):
 ```bash
 npx cap add ios
