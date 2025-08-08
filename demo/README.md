@@ -2,6 +2,7 @@
 * Luminote is an AI-powered app that helps people sharpen their writing and descriptive skills, turning everyday moments into vivid stories.  
 * Luminote brings people closer to the beauty of art and the richness of the human experience.    
 * Luminote connects people to the beauty of art and the wonders of the human world.  
+* With Luminote, people can learn how to communicate together with beautiful, thoughtful language.
 
 ## Background
 * I believe that many people struggle with writing and describing things around them, and that this is a skill that can be improved with practice. Luminote is designed to help people improve their writing skills by providing them with a platform to practice and receive feedback.
@@ -68,4 +69,8 @@ The user can see their league ranking and any achievements they have unlocked.
 
 
 ## My Dream
-People believe that how much they gain from knowing how to write and describe things around them. I believe that Luminote can help people improve their writing skills and become better writers. I hope that Luminote can help people become more confident in their writing and help them express themselves better.
+Many people believe in the power of the arts and in the deep connection that comes from truly understanding one another. At the heart of being human is our ability to express love, ideas, and feelings through words. With Luminote, people can learn how to communicate together with beautiful, thoughtful language.  
+
+We gain so much from knowing how to write and describe the world around us — from capturing the colors of a sunset to sharing the quiet strength of a friend’s smile. I believe Luminote can help people not only improve their writing skills, but also grow into more confident, compassionate communicators.  
+
+By using this app, we nurture both the art of language and the love between human beings, learning to connect more deeply, share more openly, and see the beauty in each other’s stories.  
