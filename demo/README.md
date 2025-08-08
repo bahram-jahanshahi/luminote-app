@@ -31,27 +31,30 @@ When the user opens the app, they are presented with a home page that shows thei
 ## Explore and Practice
 The user can explore different writing styles and practice their writing skills before start the daily challenge. The user can also see their progress and any feedback they have received from the AI.
 
-![Explore and Practice](./Lumintoe_ScreenShots/2.png)
-
+<img src="./Lumintoe_ScreenShots/2.png" alt="Explore and Practice" width="400" />
 ### Write the voice of the Image
 The user can challenge themselves to write a description of an image for everyday challenge. The AI will provide feedback on the user's writing and help them improve their skills.
 
-![Write the voice of the Image](./Lumintoe_ScreenShots/3.png)
+<img src="./Lumintoe_ScreenShots/3.png" alt="Explore and Practice" width="400" />
 
 
 ### AI Feedback
 The AI will provide feedback on the user's writing and help them improve their skills. The user can also see their progress and any feedback they have received from the AI.
-![AI Feedback](./Lumintoe_ScreenShots/4.png)
+<img src="./Lumintoe_ScreenShots/4.png" alt="Explore and Practice" width="400" />
+
 AI gives some examples and common metaphors to help the user improve their writing skills. The user can also see their progress and any feedback they have received from the AI.
-![AI Feedback](./Lumintoe_ScreenShots/5.png)
+<img src="./Lumintoe_ScreenShots/5.png" alt="Explore and Practice" width="400" />
+
 
 ### Score the Writing
 AI gives a score to the user's writing based on the quality of their writing and the feedback they have received. The user can also see their progress and any feedback they have received from the AI.
-![Score the Writing](./Lumintoe_ScreenShots/6.png)
+<img src="./Lumintoe_ScreenShots/6.png" alt="Explore and Practice" width="400" />
+
 
 ### League System and Ranking
 The user can see their league ranking and any achievements they have unlocked. The user can also see their progress and any feedback they have received from the AI.
-![League System and Ranking](./Lumintoe_ScreenShots/7.png)
+<img src="./Lumintoe_ScreenShots/7.png" alt="Explore and Practice" width="400" />
+
 
 
 ## My Dream
