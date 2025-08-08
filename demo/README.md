@@ -26,7 +26,7 @@ Add one word or metaphor to the user's writing skill
 ### Home Page
 When the user opens the app, they are presented with a home page that shows their daily writing practice and any challenges they have completed. The user can also see their league ranking and any achievements they have unlocked.  
 
-![Home Page](./Lumintoe_ScreenShots/1.png)
+<img src="./Lumintoe_ScreenShots/1.png" alt="Home Page" width="400" />
 
 ## Explore and Practice
 The user can explore different writing styles and practice their writing skills before start the daily challenge. The user can also see their progress and any feedback they have received from the AI.
