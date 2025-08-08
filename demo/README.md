@@ -51,12 +51,15 @@ AI gives some examples and common metaphors to help the user improve their writi
 
 
 ### Score the Writing
-AI gives a score to the user's writing based on the quality of their writing and the feedback they have received. The user can also see their progress and any feedback they have received from the AI.
+AI gives a score to the user's writing based on the quality of their writing and the feedback they have received. The user can also see their progress and any feedback they have received from the AI.  
+
 <img src="./Lumintoe_ScreenShots/6.png" alt="Explore and Practice" width="400" />
 
 
 ### League System and Ranking
-The user can see their league ranking and any achievements they have unlocked. The user can also see their progress and any feedback they have received from the AI.
+The user can see their league ranking and any achievements they have unlocked. The user can also see their progress and any feedback they have received from the AI.  
+
+
 <img src="./Lumintoe_ScreenShots/7.png" alt="Explore and Practice" width="400" />
 
 
