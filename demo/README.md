@@ -39,10 +39,14 @@ The user can challenge themselves to write a description of an image for everyda
 
 
 ### AI Feedback
-The AI will provide feedback on the user's writing and help them improve their skills. The user can also see their progress and any feedback they have received from the AI.
+The AI will provide feedback on the user's writing and help them improve their skills. The user can also see their progress and any feedback they have received from the AI.  
+
+
 <img src="./Lumintoe_ScreenShots/4.png" alt="Explore and Practice" width="400" />
 
-AI gives some examples and common metaphors to help the user improve their writing skills. The user can also see their progress and any feedback they have received from the AI.
+AI gives some examples and common metaphors to help the user improve their writing skills. The user can also see their progress and any feedback they have received from the AI.  
+
+
 <img src="./Lumintoe_ScreenShots/5.png" alt="Explore and Practice" width="400" />
 
 
