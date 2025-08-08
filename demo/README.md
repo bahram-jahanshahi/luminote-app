@@ -32,6 +32,7 @@ When the user opens the app, they are presented with a home page that shows thei
 The user can explore different writing styles and practice their writing skills before start the daily challenge. The user can also see their progress and any feedback they have received from the AI.
 
 <img src="./Lumintoe_ScreenShots/2.png" alt="Explore and Practice" width="400" />
+
 ### Write the voice of the Image
 The user can challenge themselves to write a description of an image for everyday challenge. The AI will provide feedback on the user's writing and help them improve their skills.
 
