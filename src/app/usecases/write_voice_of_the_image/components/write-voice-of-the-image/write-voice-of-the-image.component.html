@@ -1,0 +1,204 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Voice of the Image
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!--<ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Voice of the Image</ion-title>
+    </ion-toolbar>
+  </ion-header>-->
+
+  <ion-card >
+    <img alt="Silhouette of mountains" src="/assets/artworks/daily_challenges/1.png" />
+    <!--<ion-card-header>
+      <ion-card-title>
+        What is the voice of the image?
+      </ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>-->
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-segment value="default">
+              <ion-segment-button value="default">
+                <ion-label>Writing</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="segment">
+                <ion-label>Accessibility</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-text>
+              <h1>Style</h1>
+            </ion-text>
+            <ion-select aria-label="Select the voice" interface="action-sheet" placeholder="Select the Style">
+              <ion-select-option value="Poetic">Poetic</ion-select-option>
+              <ion-select-option value="Descriptive">Descriptive</ion-select-option>
+              <ion-select-option value="Narrative">Narrative</ion-select-option>
+              <ion-select-option value="Reflective">Reflective</ion-select-option>
+              <ion-select-option value="Minimalist">Minimalist</ion-select-option>
+              <ion-select-option value="Philosophical">Philosophical</ion-select-option>
+              <ion-select-option value="Romantic">Romantic</ion-select-option>
+              <ion-select-option value="Surreal">Surreal</ion-select-option>
+              <ion-select-option value="Symbolic">Symbolic</ion-select-option>
+            </ion-select>
+
+          </ion-col>
+          <ion-col size="12">
+            <ion-text>
+              <h1>The voice</h1>
+            </ion-text>
+            <ion-textarea [formControl]="voiceOfImageFormControl" placeholder="write the voice you hear here..." rows="5"></ion-textarea>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      @if (!waitForGivingFeedBack) {
+      <ion-button (click)="giveFeedbackToVoice()" expand="block">
+        Make the voice heard
+      </ion-button>
+      } @else {
+      <ion-button [disabled]="true" expand="block">
+        <ion-spinner name="lines"></ion-spinner>
+      </ion-button>
+      }
+
+
+      <!-- Revision Modal -->
+      <ion-modal [isOpen]="isRevisionModalOpen" >
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-button (click)="rewrite()">Revision</ion-button>
+              </ion-buttons>
+              <ion-title>Review</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="confirm()" [strong]="true">Send</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content>
+            <ion-card >
+              <ion-card-content>
+                <ion-row class="ion-align-items-center">
+                  <ion-col size="auto">
+                    <ion-icon size="large" name="hourglass-outline"></ion-icon>
+                  </ion-col>
+                  <ion-col>
+                    <ion-label>
+                      You have <strong>{{ attemptsLeft }}</strong> revision attempt{{ attemptsLeft > 1 ? 's' : '' }} left.
+                    </ion-label>
+                  </ion-col>
+                </ion-row>
+              </ion-card-content>
+            </ion-card>
+            <ion-card >
+              <ion-card-content>
+                <ion-row class="ion-align-items-center">
+                  <ion-col size="auto">
+                    <ion-icon size="large" name="barbell-outline"></ion-icon>
+                  </ion-col>
+                  <ion-col>
+                    <ion-label>
+                      {{ responseFeedback }}
+                    </ion-label>
+                  </ion-col>
+                </ion-row>
+              </ion-card-content>
+            </ion-card>
+            <ion-card >
+              <ion-card-content>
+                <ion-text>
+                  <h1>
+                    Suggestions
+                  </h1>
+                </ion-text>
+                <ion-list>
+                  @for (tip of responseSuggestions; track tip) {
+                    <ion-item >
+                      <ion-icon name="bulb-outline" slot="start"></ion-icon>
+                      <ion-label>{{ tip }}</ion-label>
+                    </ion-item>
+                  }
+                </ion-list>
+              </ion-card-content>
+            </ion-card>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+      <!-- End of Revision Modal -->
+      <!-- Submit Modal -->
+      <ion-modal #submitModal [isOpen]="isSubmitModalOpen" >
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-button (click)="closeSubmitModal()">Close</ion-button>
+              </ion-buttons>
+              <ion-title>Score</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content>
+            <ion-card >
+              <ion-card-content>
+                <ion-button (click)="randomSeries()">Random Score</ion-button>
+                <!--The content below is only a placeholder and can be replaced.-->
+                @if (isSubmitModalOpen) {
+                  <apx-chart #scoreChart
+                             [series]="chartOptions.series!"
+                             [chart]="chartOptions.chart!"
+                             [plotOptions]="chartOptions.plotOptions!"
+                             [labels]="chartOptions.labels!"
+                             [colors]="chartOptions.colors!"
+                  ></apx-chart>
+                }
+                <ion-grid>
+                  <ion-row>
+                    <ion-col size="6">
+                      <ion-text>
+                        <h2>Relevance to Image</h2>
+                      </ion-text>
+                      <p>73</p>
+                    </ion-col>
+                    <ion-col size="6">
+                      <ion-text>
+                        <h2>Creativity & Imagination</h2>
+                      </ion-text>
+                      <p>65</p>
+                    </ion-col>
+                    <ion-col size="6">
+                      <ion-text>
+                        <h2>Language & Word Choice</h2>
+                      </ion-text>
+                      <p>32</p>
+                    </ion-col>
+                    <ion-col size="6">
+                      <ion-text>
+                        <h2>Structure & Style Match</h2>
+                      </ion-text>
+                      <p>52</p>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+      <!-- End of Submit Modal -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>
