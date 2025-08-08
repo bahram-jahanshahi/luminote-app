@@ -7,17 +7,17 @@ There is a lot of potential for AI to help people with this, and I believe that 
 There is a huge different between saying "A man standing on a rock and looking at the sea" and "A man standing on a rock and looking at the sea, with the sun setting in the background and the waves crashing against the shore with feel of hope and sadness and loneliness in his heart".
 
 ## App Features
-Daily writing practice with AI feedback
-Daily Challenge
-League system
-Style of writing including: Poetry, short story, humor, narrative, etc.
-Accessibility for people with disabilities
-Support for multiple languages
+1. Daily writing practice with AI feedback
+2. Daily Challenge
+3. League system
+4. Style of writing including: Poetry, short story, humor, narrative, etc.
+5. Accessibility for people with disabilities
+6. Support for multiple languages
 
 ## Further Work
-Student classroom writing practice
-Generate images based on the world hot news or events
-Add one word or metaphor to the user's writing skill
+1. Student classroom writing practice
+2. Generate images based on the world hot news or events
+3. Add one word or metaphor to the user's writing skill
 
 
 
