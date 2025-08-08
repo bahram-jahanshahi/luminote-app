@@ -1,7 +1,7 @@
 # Luminote App
-Luminote is an AI powered app for helping people with improving their skills in writing and describing things around them by leveraging the power of language models.  
-Luminote brings people closer to the beauty of art and the richness of the human experience.    
-Luminote connects people to the beauty of art and the wonders of the human world.  
+* Luminote is an AI-powered app that helps people sharpen their writing and descriptive skills, turning everyday moments into vivid stories.  
+* Luminote brings people closer to the beauty of art and the richness of the human experience.    
+* Luminote connects people to the beauty of art and the wonders of the human world.  
 
 ## Background
 * I believe that many people struggle with writing and describing things around them, and that this is a skill that can be improved with practice. Luminote is designed to help people improve their writing skills by providing them with a platform to practice and receive feedback.
