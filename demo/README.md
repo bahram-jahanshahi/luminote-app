@@ -2,10 +2,10 @@
 Luminote is an AI powered app for helping people with improving their skills in writing and describing things around them by leveraging the power of language models.
 
 ## Background
-I believe that many people struggle with writing and describing things around them, and that this is a skill that can be improved with practice. Luminote is designed to help people improve their writing skills by providing them with a platform to practice and receive feedback.
-There is a lot of potential for AI to help people with this, and I believe that Luminote is a step in the right direction.
-There is a huge different between saying "A man standing on a rock and looking at the sea" and "A man standing on a rock and looking at the sea, with the sun setting in the background and the waves crashing against the shore with feel of hope and sadness and loneliness in his heart".
-
+* I believe that many people struggle with writing and describing things around them, and that this is a skill that can be improved with practice. Luminote is designed to help people improve their writing skills by providing them with a platform to practice and receive feedback.
+* There is a lot of potential for AI to help people with this, and I believe that Luminote is a step in the right direction.
+* There is a huge different between saying "A man standing on a rock and looking at the sea" and "A man standing on a rock and looking at the sea, with the sun setting in the background and the waves crashing against the shore with feel of hope and sadness and loneliness in his heart".
+* 
 ## App Features
 1. Daily writing practice with AI feedback
 2. Daily Challenge
