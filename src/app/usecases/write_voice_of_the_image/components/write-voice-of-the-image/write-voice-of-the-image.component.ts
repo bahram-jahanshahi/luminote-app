@@ -83,6 +83,8 @@ export class WriteVoiceOfTheImageComponent  implements OnInit {
   voiceOfImageFormControl = new FormControl('', Validators.required);
   responseFeedback: string = '';
   responseSuggestions: string[] = [];
+  responseMetaphors: string[] = [];
+  responseExamples: string[] = [];
   waitForGivingFeedBack = false;
 
   attemptsLeft = 2;
@@ -227,6 +229,8 @@ export class WriteVoiceOfTheImageComponent  implements OnInit {
           console.log('Feedback submitted successfully:', response);
           this.responseFeedback = response.feedback;
           this.responseSuggestions = response.suggestions;
+          this.responseExamples = response.examples;
+          this.responseMetaphors = response.metaphors;
           this.showRevisionModal(true);
         },
         error: (error) => {
