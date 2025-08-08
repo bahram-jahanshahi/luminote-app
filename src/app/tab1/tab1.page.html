@@ -13,7 +13,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card [routerLink]="['/tabs/write-voice-of-the-image']" style="cursor: pointer">
+  <ion-card (click)="navigateToWriteVoiceOfTheImage()" style="cursor: pointer">
     <img alt="Silhouette of mountains" src="/assets/artworks/daily_challenges/1.png" />
     <ion-card-header>
       <ion-card-title>
@@ -30,7 +30,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card [routerLink]="['/tabs/tab3']" style="cursor: pointer">
+  <ion-card [routerLink]="['/tabs/explore-and-practice']" style="cursor: pointer">
     <ion-card-header>
       <ion-card-title>
         <h1>Explore and Practice</h1>
@@ -43,25 +43,25 @@
           <ion-col size="6" >
             <div class="gallery-image">
               <img alt="Silhouette of mountains"
-                   src="/assets/artworks/explore/exp_1.png"/>
+                   src="/assets/artworks/explore/exp_5.png"/>
             </div>
           </ion-col>
           <ion-col size="6">
             <div class="gallery-image">
               <img alt="Silhouette of mountains"
-                   src="/assets/artworks/explore/exp_2.png"/>
+                   src="/assets/artworks/explore/exp_12.png"/>
             </div>
           </ion-col>
           <ion-col size="6">
             <div class="gallery-image">
               <img alt="Silhouette of mountains"
-                   src="/assets/artworks/explore/exp_3.png"/>
+                   src="/assets/artworks/explore/exp_15.png"/>
             </div>
           </ion-col>
           <ion-col size="6">
             <div class="gallery-image">
               <img alt="Silhouette of mountains"
-                   src="/assets/artworks/explore/exp_4.png"/>
+                   src="/assets/artworks/explore/exp_7.png"/>
             </div>
           </ion-col>
         </ion-row>

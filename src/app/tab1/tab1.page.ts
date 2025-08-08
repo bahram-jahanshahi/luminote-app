@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 import {
   IonHeader,
   IonToolbar,
@@ -11,7 +12,7 @@ import {
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import {RouterLink} from "@angular/router";
 import {addIcons} from "ionicons";
-import {flameSharp, imagesOutline} from "ionicons/icons";
+import {flameSharp, imagesOutline, navigate} from "ionicons/icons";
 
 @Component({
   selector: 'app-tab1',
@@ -20,7 +21,13 @@ import {flameSharp, imagesOutline} from "ionicons/icons";
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonButton, RouterLink, IonGrid, IonRow, IonCol, IonSpinner, IonIcon, IonText],
 })
 export class Tab1Page {
-  constructor() {
+  constructor(private router: Router) {
     addIcons({ flameSharp, imagesOutline});
+  }
+
+  protected readonly navigate = navigate;
+
+  public navigateToWriteVoiceOfTheImage() {
+    this.router.navigate(["/tabs/write-voice-of-the-image", 0]);
   }
 }

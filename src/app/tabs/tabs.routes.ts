@@ -3,6 +3,9 @@ import { TabsPage } from './tabs.page';
 import {
   WriteVoiceOfTheImageComponent
 } from "../usecases/write_voice_of_the_image/components/write-voice-of-the-image/write-voice-of-the-image.component";
+import {
+  ExploreArtworksComponent
+} from "../usecases/explore_and_practice/components/explore-artworks/explore-artworks.component";
 
 export const routes: Routes = [
   {
@@ -14,18 +17,17 @@ export const routes: Routes = [
         loadComponent: () =>
           import('../tab1/tab1.page').then((m) => m.Tab1Page),
       },
-      /*{
-        path: 'tab2',
-        loadComponent: () =>
-          import('../tab2/tab2.page').then((m) => m.Tab2Page),
-      },*/
+      {
+        path: "explore-and-practice",
+        component: ExploreArtworksComponent
+      },
       {
         path: 'tab3',
         loadComponent: () =>
           import('../tab3/tab3.page').then((m) => m.Tab3Page),
       },
       {
-          path: 'write-voice-of-the-image',
+        path: 'write-voice-of-the-image/:imageId',
         component: WriteVoiceOfTheImageComponent
       },
       {

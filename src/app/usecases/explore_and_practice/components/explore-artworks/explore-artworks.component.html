@@ -1,0 +1,21 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Explore Artworks</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        @for (image of exp_images; track image.code) {
+          <ion-col size="6">
+            <div class="gallery-image" (click)="navigateToWriteVoiceOfTheImage(image.code)">
+              <img alt="Silhouette of mountains"
+                   src="/assets/artworks/explore/exp_{{image.code}}.png"/>
+            </div>
+          </ion-col>
+        }
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-app>

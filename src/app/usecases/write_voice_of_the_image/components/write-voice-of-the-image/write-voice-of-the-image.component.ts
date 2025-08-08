@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import { inject } from '@angular/core';
 import {ApexChart, ApexNonAxisChartSeries, ApexPlotOptions, ChartComponent} from "ng-apexcharts";
 import {
   IonButton,
@@ -29,6 +30,8 @@ import {GiveFeedbackToVoiceService} from "../../services/give-feedback-to-voice.
 import {GiveFeedbackToVoiceUseCaseCommand} from "../../domain/give-feedback-to-voice-use-case-command";
 import {UserService} from "../../../../core/services/user.service";
 import {FeedBackToVoice} from "../../domain/feed-back-to-voice";
+import { ActivatedRoute } from '@angular/router';
+
 export type ChartOptions = {
   series: ApexNonAxisChartSeries;
   chart: ApexChart;
@@ -64,14 +67,18 @@ export type ChartOptions = {
     IonTitle,
     IonToolbar,
     ReactiveFormsModule,
-    IonFab,
-    IonFabButton,
     IonSegment,
     IonSegmentButton,
     IonSpinner
   ]
 })
 export class WriteVoiceOfTheImageComponent  implements OnInit {
+
+  private router = inject(Router);
+  private giveFeedbackToVoiceService = inject(GiveFeedbackToVoiceService);
+  private userService = inject(UserService);
+  private activatedRoute = inject(ActivatedRoute);
+
 
   voiceOfImageFormControl = new FormControl('', Validators.required);
   responseFeedback: string = '';
@@ -83,8 +90,9 @@ export class WriteVoiceOfTheImageComponent  implements OnInit {
   isRevisionModalOpen = false;
   isSubmitModalOpen = false;
 
-  @ViewChild('submitModal', { static: false }) submitModalRef!: IonModal;
+  imagePath = '';
 
+  @ViewChild('submitModal', { static: false }) submitModalRef!: IonModal;
 
   @ViewChild("scoreChart") chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions> = {
@@ -122,11 +130,26 @@ export class WriteVoiceOfTheImageComponent  implements OnInit {
     labels: ["Apples", "Oranges", "Bananas", "Berries"]
   };
 
-  constructor(private router: Router, private giveFeedbackToVoiceService: GiveFeedbackToVoiceService, private userService: UserService) {
+  constructor() {
     addIcons({bulbOutline, hourglassOutline, barbellOutline});
   }
 
   ngOnInit(): void {
+      this.activatedRoute.params.subscribe(param =>  {
+        const imageId = param['imageId'];
+        if (imageId) {
+          // Load the image based on the ID, if needed
+          if (imageId === '0') {
+            this.imagePath = '/assets/artworks/daily_challenges/1.png'; // Default image for ID 0
+          } else {
+            // Here you can implement logic to fetch the image based on the ID
+            // For now, we'll just set a placeholder path
+            this.imagePath = `/assets/artworks/explore/exp_${imageId}.png`;
+          }
+        } else {
+          console.warn('No image ID provided in route parameters');
+        }
+      });
       console.log("WriteVoiceOfTheImageComponent initialized");
   }
 
